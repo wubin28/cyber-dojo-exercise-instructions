@@ -1,9 +1,9 @@
 // Tire Pressure Monitoring System
-// ****** Alarm.h
-#ifndef ALARM_H
-#define ALARM_H
+// ****** Alarm.hpp
+#ifndef ALARM_HPP
+#define ALARM_HPP
 
-#include "Sensor.h"
+#include "Sensor.hpp"
 
 class Alarm {
 public:
@@ -17,10 +17,10 @@ private:
 	bool alarmOn;
 };
 
-#endif /* ALARM_H */
+#endif /* ALARM_HPP */
 
 // ****** Alarm.cpp
-#include "Alarm.h"
+#include "Alarm.hpp"
 
 void Alarm::check() {
 	double psiPressureValue = sensor->popNextPressurePsiValue();
@@ -42,9 +42,9 @@ Alarm::Alarm() {
 const double Alarm::LowPressureThreshold = 17;
 const double Alarm::HighPressureThreshold = 21;
 
-// ****** Sensor.h
-#ifndef SENSOR_H
-#define SENSOR_H
+// ****** Sensor.hpp
+#ifndef SENSOR_HPP
+#define SENSOR_HPP
 
 #include <random>
 
@@ -58,10 +58,10 @@ private:
 	static double samplePressure();
 };
 
-#endif /* SENSOR_H */
+#endif /* SENSOR_HPP */
 
 // ****** Sensor.cpp
-#include "Sensor.h"
+#include "Sensor.hpp"
 
 double Sensor::popNextPressurePsiValue() {
 	double pressureTelemetryValue;
