@@ -1,0 +1,46 @@
+// ****** TicketDispenserTest.java
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class TicketDispenserTest {
+  @Test
+  public void a_trivial_test() {
+    assertEquals(5, 2 + 3);
+  }
+}
+
+// ****** TicketDispenser.java
+public class TicketDispenser {
+  public TurnTicket getTurnTicket()
+  {
+    int newTurnNumber = TurnNumberSequence.getNextTurnNumber();
+    TurnTicket newTurnTicket = new TurnTicket(newTurnNumber);
+
+    return newTurnTicket;
+  }
+}
+
+// ****** TurnNumberSequence.java
+public class TurnNumberSequence {
+  private static int _turnNumber = 0;
+
+  public static int getNextTurnNumber()
+  {
+    return _turnNumber++;
+  }
+}
+
+// ****** TurnTicket.java
+public class TurnTicket {
+  private final int turnNumber;
+
+  public TurnTicket(int turnNumber)
+  {
+    this.turnNumber = turnNumber;
+  }
+
+  public int getTurnNumber()
+  {
+    return turnNumber;
+  }
+}
